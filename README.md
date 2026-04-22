@@ -2,7 +2,7 @@
 
 <br/>
 
-<img src="https://readme-typing-svg.demolab.com?font=Sora&weight=700&size=42&pause=1000&color=6C63FF&center=true&vCenter=true&width=600&lines=🔍+FindIt;Campus+Lost+%26+Found;Powered+by+Smart+Matching" alt="FindIt" />
+# 🔍 FindIt
 
 <br/>
 

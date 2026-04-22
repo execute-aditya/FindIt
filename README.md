@@ -2,7 +2,7 @@
 
 <br/>
 
-<img src="https://readme-typing-svg.demolab.com?font=Sora&weight=700&size=42&pause=1000&color=6C63FF&center=true&vCenter=true&width=600&lines=🔍+FindIT;Campus+Lost+%26+Found;Powered+by+Smart+Matching" alt="FindIT" />
+<img src="https://readme-typing-svg.demolab.com?font=Sora&weight=700&size=42&pause=1000&color=6C63FF&center=true&vCenter=true&width=600&lines=🔍+FindIt;Campus+Lost+%26+Found;Powered+by+Smart+Matching" alt="FindIt" />
 
 <br/>
 
@@ -29,7 +29,7 @@ Post what you lost. Post what you found. Let the engine bring them together.
 
 ## 📌 Table of Contents
 
-- [Why FindIT?](#-why-findit)
+- [Why FindIt?](#-why-findit)
 - [Core Features](#-core-features)
 - [How the Matching Engine Works](#-how-the-matching-engine-works)
 - [Tech Stack](#-tech-stack)
@@ -45,11 +45,11 @@ Post what you lost. Post what you found. Let the engine bring them together.
 
 ---
 
-## 💡 Why FindIT?
+## 💡 Why FindIt?
 
 Traditional lost-and-found systems fail students in three critical ways:
 
-| Problem | Traditional Approach | FindIT Solution |
+| Problem | Traditional Approach | FindIt Solution |
 |---------|---------------------|-----------------|
 | **Fragmented data** | WhatsApp groups, notice boards | Centralized, searchable database |
 | **Manual matching** | Security office cross-referencing | Automated heuristic NLP engine |
@@ -57,7 +57,7 @@ Traditional lost-and-found systems fail students in three critical ways:
 | **Privacy risks** | Contact info exposed publicly | Identity hidden until claim is approved |
 | **Poor retrieval** | <15% recovery rate (historical) | Precision of 0.98 for electronics |
 
-> A cross-campus survey at SCE revealed **Electronics (42%)** and **ID Cards/Wallets (31%)** are the most commonly lost high-value items — precisely the categories where FindIT's matching engine excels.
+> A cross-campus survey at SCE revealed **Electronics (42%)** and **ID Cards/Wallets (31%)** are the most commonly lost high-value items — precisely the categories where FindIt's matching engine excels.
 
 ---
 
@@ -92,7 +92,7 @@ Built with a mobile-first mindset using **CSS Modules** and **Glassmorphism** de
 
 ## 🧠 How the Matching Engine Works
 
-FindIT's core is a **Deterministic Multi-Stage Heuristic Pipeline** — no LLMs, no cloud AI calls, zero extra cost.
+FindIt's core is a **Deterministic Multi-Stage Heuristic Pipeline** — no LLMs, no cloud AI calls, zero extra cost.
 
 ### Scoring Architecture
 
@@ -278,7 +278,7 @@ model Message {
 
 ## 🔒 Security Design
 
-FindIT treats security as a **primary feature**, not an afterthought.
+FindIt treats security as a **primary feature**, not an afterthought.
 
 ### Domain-Level Authentication
 ```typescript
@@ -445,7 +445,7 @@ Open [http://localhost:3000](http://localhost:3000) and you're live. 🎉
 | `SMTP_PORT` | SMTP port | `465` |
 | `SMTP_USER` | Sender email address | `support.findit@gmail.com` |
 | `SMTP_PASS` | Gmail App Password | `xxxx xxxx xxxx xxxx` |
-| `SMTP_FROM` | Display name + email | `FindIT Campus <...>` |
+| `SMTP_FROM` | Display name + email | `FindIt Campus <...>` |
 
 > ⚠️ **Never commit `.env` or `.env.local` to git.** They are listed in `.gitignore`. Use `.env.example` as the safe template.
 
@@ -469,7 +469,7 @@ npm run db:studio    # Open Prisma Studio (visual DB editor)
 | **v2** | 🖼️ Computer Vision | CNN/ViT to auto-categorize item photos and extract brand/color/damage |
 | **v2** | 🧠 Vector Search | Migrate to BERT/OpenAI embeddings + `pgvector` for true semantic search |
 | **v2** | 📍 IoT Integration | Bluetooth/Wi-Fi beacon cross-referencing for real-time location tagging |
-| **v3** | 🏷️ NFC/QR Tags | "FindIT Verified" stickers on valuables for instant scan-to-report |
+| **v3** | 🏷️ NFC/QR Tags | "FindIt Verified" stickers on valuables for instant scan-to-report |
 | **v3** | 🌐 Multi-Campus Federation | Extend the platform to multiple institutions with shared item database |
 | **v3** | 📊 Admin Analytics | Campus security dashboard with heatmaps of high-loss zones |
 | **v3** | 🤖 AI Auto-Fill | Predict category/color/brand from a typed title using local ML |
@@ -498,6 +498,6 @@ This project is licensed under the [MIT License](LICENSE).
 
 Made with ❤️ at **Saraswati College of Engineering**, Navi Mumbai
 
-*FindIT — because every lost item deserves to be found.*
+*FindIt — because every lost item deserves to be found.*
 
 </div>

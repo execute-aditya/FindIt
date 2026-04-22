@@ -1,0 +1,136 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String
+  email         String    @unique
+  emailVerified DateTime?
+  password      String
+  role          Role      @default(USER)
+  department    String?
+  phone         String    @unique
+  avatar        String?
+  campus        String    @default("Main Campus")
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  items         Item[]
+  sentMessages     Message[] @relation("SentMessages")
+  receivedMessages Message[] @relation("ReceivedMessages")
+  claims        Claim[]
+}
+
+model Item {
+  id          String      @id @default(cuid())
+  title       String
+  description String
+  category    Category
+  type        ItemType
+  status      ItemStatus  @default(ACTIVE)
+  location    String
+  campus      String      @default("Main Campus")
+  date        DateTime
+  brand       String?
+  color       String?
+  serialNumber String?
+  images      String[]
+  tags        String[]
+  contactInfo String?
+  userId      String
+  user        User        @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+  messages    Message[]
+  claims      Claim[]
+}
+
+model Claim {
+  id          String      @id @default(cuid())
+  itemId      String
+  item        Item        @relation(fields: [itemId], references: [id], onDelete: Cascade)
+  claimantId  String
+  claimant    User        @relation(fields: [claimantId], references: [id], onDelete: Cascade)
+  description String
+  proofImages String[]
+  status      ClaimStatus @default(PENDING)
+  reviewNote  String?
+  createdAt   DateTime    @default(now())
+  reviewedAt  DateTime?
+}
+
+model VerificationToken {
+  id      String   @id @default(cuid())
+  email   String
+  token   String   @unique
+  expires DateTime
+
+  @@unique([email, token])
+}
+
+model PasswordResetToken {
+  id      String   @id @default(cuid())
+  email   String
+  token   String   @unique
+  expires DateTime
+
+  @@unique([email, token])
+}
+
+model Message {
+  id         String   @id @default(cuid())
+  content    String
+  senderId   String
+  receiverId String
+  itemId     String
+  sender     User     @relation("SentMessages", fields: [senderId], references: [id], onDelete: Cascade)
+  receiver   User     @relation("ReceivedMessages", fields: [receiverId], references: [id], onDelete: Cascade)
+  item       Item     @relation(fields: [itemId], references: [id], onDelete: Cascade)
+  read       Boolean  @default(false)
+  createdAt  DateTime @default(now())
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+enum ItemType {
+  LOST
+  FOUND
+}
+
+enum ItemStatus {
+  ACTIVE
+  PENDING_CLAIM
+  CLAIMED
+  RESOLVED
+}
+
+enum ClaimStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+enum Category {
+  ELECTRONICS
+  CLOTHING
+  ACCESSORIES
+  BOOKS
+  STATIONERY
+  KEYS
+  WALLET
+  ID_CARD
+  SPORTS
+  OTHER
+}
